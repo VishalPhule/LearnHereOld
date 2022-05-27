@@ -43,7 +43,7 @@ export default class CourseListComponent extends NavigationMixin(LightningElemen
     handleourseClick = Course => {
 
         Course.preventDefault();
-        let selectedCourseId= Course.detail.courseId;
+        let selectedCourseId = course.detail.courseId;
         alert('Helllo...' + selectedCourseId);
         let navigationTarget = {
             type: 'comm__namedPage',

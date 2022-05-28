@@ -101,7 +101,7 @@ export default class CourseList extends LightningElement {
     handleSearch(course) {
         let keyword = course.detail.value;
         let filteredCourses = this.result.filter((record, index, arrayObject) => {
-            return record.Name.toLowerCase().includes(keyword.toLowerCase());
+            return record.Name__c.toLowerCase().includes(keyword.toLowerCase());
 
         });
         if (keyword && keyword.length >= 2) {
@@ -112,15 +112,24 @@ export default class CourseList extends LightningElement {
 
     }
 
+    // handleStartDate(course) {
+    //     let valueDateTime = course.target.value;
+
+    //     let filteredCourses = this.result.filter((record, index, arrayObject) => {
+    //         window.console.log("StartDateTime__c ", StartDateTime__c);
+    //         return record.StartDateTime__c >= valueDateTime;
+    //     });
+    //     this.recordsToDisplay = filteredCourses;
+
+    //   }
     handleStartDate(course) {
-        let valueDateTime = course.target.value;
-        window.console.log("valueDateTime ", valueDateTime);
-        let filteredCourses = this.result.filter((record, index, arrayObject) => {
-            window.console.log("StartDateTime__c ", StartDateTime__c);
-            return record.StartDateTime__c >= valueDateTime;
+        let valuedatetime = course.target.value;
+        //  window.console.log("valueDateTime ", valueDateTime);
+        let filteredCourses = this.result.filter((record, index, arrayobject) => {
+            // window.console.log("StartDateTime__c ", StartDateTime__c);
+            return record.StartDateTime__c >= valuedatetime;
         });
         this.recordsToDisplay = filteredCourses;
-
     }
 
     handleLocationSearch(course) {

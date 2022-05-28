@@ -66,7 +66,7 @@ export default class courseDetails extends NavigationMixin(LightningElement) {
                     trainer.CompanyName = trainer.Trainer__r.Company__c;
                 });
                 this.trainerList = result;
-                // window.console.log(" result ", this.result);
+                window.console.log(" result ", this.result);
                 this.errors = undefined;
             })
             .catch((err) => {

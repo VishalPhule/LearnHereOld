@@ -10,7 +10,7 @@ import { NavigationMixin } from 'lightning/navigation';
 export default class CourseListComponent extends NavigationMixin(LightningElement) {
 
     upcomingCourse;
-    pastCourse;
+    pastCourses;
     __errors;
     isSpinner = false;
 
@@ -32,15 +32,15 @@ export default class CourseListComponent extends NavigationMixin(LightningElemen
     @wire(fetchPastCourses)
     wiredPastCoursesData({ error, data }) {
         if (data) {
-            this.pastCourse = data;
+            this.pastCourses = data;
         } else if (error) {
             console.error('Course listcmpnt Past Event Error:', error);
-            this.pastCourse = undefined;
+            this.pastCourses = undefined;
             this.__errors = error;
         }
     }
 
-    handleourseClick = course => {
+    handleCourseClick = course => {
 
         course.preventDefault();
         let selectedCourseId = course.detail.courseId;

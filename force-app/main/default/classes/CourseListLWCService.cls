@@ -7,7 +7,7 @@ public without sharing class CourseListLWCService {
             courseList = [SELECT Id, Location__c, 
                             Location__r.Name, Name__c, StartDateTime__c,TitleImageUrl__c
                             FROM Course__c
-                            
+                            WHERE StartDateTime__c >= TODAY AND Live__c =true
                             WITH SECURITY_ENFORCED
                         ];
         } catch (Exception e) {

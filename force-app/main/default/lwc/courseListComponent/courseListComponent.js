@@ -44,7 +44,7 @@ export default class CourseListComponent extends NavigationMixin(LightningElemen
 
         course.preventDefault();
         let selectedCourseId = course.detail.courseId;
-        alert('Helllo...' + selectedCourseId);
+       // alert('Helllo...' + selectedCourseId);
         let navigationTarget = {
             type: 'comm__namedPage',
             attributes: {
@@ -52,7 +52,7 @@ export default class CourseListComponent extends NavigationMixin(LightningElemen
             },
             state: {
                 courseId: selectedCourseId,
-                source: 'CourseListPage'
+                source: 'courseListPage'
             }
         }
 
